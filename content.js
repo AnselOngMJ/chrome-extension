@@ -35,7 +35,13 @@ document.addEventListener("yt-navigate-finish", async () => {
                     let t = setInterval(function(){
                       for (const [key, value] of Object.entries(dict)) {
                         if (document.querySelector("video").currentTime >= parseFloat(key) && document.querySelector("video").currentTime < parseFloat(key) + parseFloat(value.dur)) {
-                          document.querySelector("h1.style-scope.ytd-watch-metadata").textContent = value.text;
+                          if (!document.querySelector(".new-caption")) {
+                            const newCaption = document.createElement("div");
+                            newCaption.classList.add("new-caption");
+                            newCaption.style.cssText = "background-color: rgba(0, 0, 0, 0.8); color: white; z-index: 10; position: relative; height: 100%; bottom: 0; font-size: 2em;";
+                            document.querySelector(".html5-video-container").appendChild(newCaption);
+                          }
+                          document.querySelector(".new-caption").textContent = value.text;
                           break;
                         }
                       }
