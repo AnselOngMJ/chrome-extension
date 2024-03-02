@@ -7,8 +7,7 @@
       "js": ["data.js", "content.js"],
       "matches": ["*://*.youtube.com/*"],
       "run_at": "document_start",
-      "world": "MAIN",
-      "type": "module"
+      "world": "MAIN"
     }
   ]
 }
