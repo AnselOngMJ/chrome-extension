@@ -4,10 +4,11 @@
   "version": "1.0",
   "content_scripts": [
     {
-      "js": ["content.js"],
+      "js": ["data.js", "content.js"],
       "matches": ["*://*.youtube.com/*"],
       "run_at": "document_start",
-      "world": "MAIN"
+      "world": "MAIN",
+      "type": "module"
     }
   ]
 }
